@@ -20,8 +20,9 @@ The holiday-rental website **Lakaz** — https://lakazmauritius.com
 - Photos are hotlinked from Unsplash. Sand-coloured **"Photo coming soon"** boxes are placeholders for Jérôme's own unit photos.
 
 ## Hosting (don't break these)
-- GitHub: private repository **Lakaz-website** (account jeromemayer666; branch `main` = the live site).
+- GitHub: **public** repository **Lakaz-website** (account jeromemayer666; branch `main` = the live site).
 - Working folder on Jérôme's PC: `C:\Users\jerom\Downloads\Lakaz-website` (with a dash). The old folder "Lakaz website" (with a space) is no longer used.
+- The repo must stay **public**: Netlify's free plan blocks builds from private repos ("Unrecognized Git contributor").
 - Netlify visibility: production is **Public**. Each production publish uses Netlify credits (~15), so group small changes into one branch.
 - Netlify project **prismatic-crumble-142e4f** is linked to that repo: every change on `main` goes live automatically. No build command, publish directory = root.
 - Domain lakazmauritius.com (+ www) is registered at Hostinger and already points to Netlify. **Never touch DNS.**
