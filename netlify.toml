@@ -1,0 +1,16 @@
+# Static site: no build step, publish the folder as it is.
+[build]
+  publish = "."
+
+# Hide project files from visitors
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/build.py"
+  to = "/"
+  status = 404
+  force = true

@@ -1,0 +1,8 @@
+# Preview copy - never upload
+Lakaz website preview/
+# Windows / Python junk
+Thumbs.db
+desktop.ini
+__pycache__/
+*.pyc
+.DS_Store

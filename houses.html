@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lakaz — Our Houses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Jost:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F4EDE1}
+a{color:#1F3B2D}a:hover{color:#B4633A}
+</style>
+<style>
+.site-head{position:absolute;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,3vw,40px);box-sizing:border-box;color:#FFFBF2}
+.site-head.over::before{content:"";position:absolute;inset:0 0 -50px;background:linear-gradient(rgba(10,20,14,.38),rgba(10,20,14,0));pointer-events:none;z-index:-1}
+.site-head.ink{position:relative;color:#1F3B2D}
+.site-head .brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.6rem;letter-spacing:.08em}
+.site-head.over .brand,.site-head.over .burger{filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
+.burger{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;background:none;border:0;border-radius:999px;color:inherit;cursor:pointer;transition:background .2s}
+.burger:hover,.burger:focus-visible{background:rgba(255,255,255,.14)}
+.site-head.ink .burger:hover,.site-head.ink .burger:focus-visible{background:rgba(31,59,45,.08)}
+.menu-backdrop{position:fixed;inset:0;z-index:40;background:rgba(14,28,20,.38);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.menu-panel{position:fixed;top:14px;right:14px;z-index:41;width:min(340px,calc(100vw - 28px));max-height:calc(100vh - 28px);overflow:auto;box-sizing:border-box;background:#1F3B2D;color:#F4EDE1;border-radius:22px;padding:18px 26px 22px;box-shadow:0 24px 60px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top right;transition:opacity .25s,transform .25s,visibility .25s;font-family:Jost,sans-serif}
+body.menu-open .menu-backdrop,body.menu-open .menu-panel{opacity:1;visibility:visible}
+body.menu-open .menu-panel{transform:none}
+.menu-panel .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.menu-panel .top span{font-size:.75rem;letter-spacing:.32em;color:#E0A47E}
+.menu-panel .close{width:44px;height:44px;margin-right:-10px;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;border-radius:999px;color:inherit;cursor:pointer}
+.menu-panel .close:hover,.menu-panel .close:focus-visible{background:rgba(255,255,255,.1)}
+.menu-panel ul{list-style:none;margin:0;padding:0}
+.menu-panel li a{display:block;padding:8px 0;color:#F4EDE1;text-decoration:none;font-family:"Cormorant Garamond",serif;font-size:2rem;line-height:1.1}
+.menu-panel li a:hover,.menu-panel li a:focus-visible{color:#E0A47E}
+.menu-panel li.sub a{font-size:1.3rem;font-style:italic;color:#E0A47E;padding:4px 0 4px 18px}
+.menu-panel li.sub a:hover{color:#F4EDE1}
+.menu-panel li a[aria-current]{color:#E0A47E}
+.menu-panel .foot{margin-top:16px;padding-top:14px;border-top:1px solid #3E5A4A;font-size:.85rem;line-height:1.7;color:#D8CFBF}
+.menu-panel .foot a{color:inherit}
+@media (prefers-reduced-motion:reduce){.menu-backdrop,.menu-panel{transition:none}}
+.ph-box{display:flex;align-items:center;justify-content:center;text-align:center;background:#E3D8C6;color:#6B6A60;font-family:Jost,sans-serif;font-size:15px;letter-spacing:.04em;padding:16px;box-sizing:border-box}.ph-box b{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:22px;color:#1F3B2D;margin-top:4px}</style>
+</head>
+<body>
+
+
+<div style="width: 100%; background: #F4EDE1; font-family: 'Jost', sans-serif; color: #1F3B2D">
+
+<header class="site-head ink"><a class="brand" href="index.html" aria-label="Lakaz home"><svg width="34" height="42" viewBox="0 0 120 150" aria-hidden="true"><path d="M10 146 V60 A50 50 0 0 1 110 60 V146" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="60" cy="44" r="9" fill="#E0A47E"/><path d="M28 92 L60 64 L92 92 Z" fill="currentColor" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M36 98 V124 M50 98 V124 M70 98 V124 M84 98 V124" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M26 124 H94" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M30 136 q7.5 -5 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#E0A47E" stroke-width="3" stroke-linecap="round"/></svg><span>Lakaz</span></a><button type="button" class="burger" onclick="toggleMenu()" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu"><svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><path d="M1 2 H29 M1 10 H29 M1 18 H29" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></header><div class="menu-backdrop" onclick="toggleMenu()"></div><div id="site-menu" class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu"><div class="top"><span>LAKAZ</span><button type="button" class="close" onclick="toggleMenu()" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 2 L18 18 M18 2 L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div><nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="houses.html" aria-current="page">Our Houses</a></li><li class="sub"><a href="filao.html">Lakaz Filao</a></li><li class="sub"><a href="coco.html">Lakaz Coco</a></li><li><a href="story.html">Lakaz Story</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav><div class="foot">Mont Choisy, Mauritius<br><a href="mailto:hello@lakazmauritius.com">hello@lakazmauritius.com</a><br>@lakaz.mauritius</div></div>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 5rem 32px 3rem; box-sizing: border-box; text-align: center">
+<div style="font-size: 0.9rem; letter-spacing: 0.35em; color: #B4633A">— OUR HOUSES —</div>
+<h1 style="margin: 12px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 4.2rem; line-height: 1">Two houses, side by side</h1>
+<p style="margin: 16px auto 0; max-width: 40rem; font-size: 1.1rem; line-height: 1.7; color: #4A5A4F">Each house is named after a tree of the island, five minutes' walk from Mont Choisy beach. Rent one, or both together for family and friends.</p>
+</section>
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 2rem; box-sizing: border-box"><div style="position: relative; height: clamp(16rem, 30vw, 28rem); border-radius: 24px; overflow: hidden"><img src="https://images.unsplash.com/photo-1653940509310-e07dcedb1933?w=2000&q=80&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1653940509310-e07dcedb1933?w=800&q=80&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1653940509310-e07dcedb1933?w=1400&q=80&auto=format&fit=crop 1400w, https://images.unsplash.com/photo-1653940509310-e07dcedb1933?w=2000&q=80&auto=format&fit=crop 2000w, https://images.unsplash.com/photo-1653940509310-e07dcedb1933?w=2600&q=80&auto=format&fit=crop 2600w" sizes="100vw" alt="A small boat on a calm green lagoon, seen from above" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: 48% 36%"></div></section>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 1rem 32px 4rem; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px">
+<a href="filao.html" style="text-decoration: none; display: flex; flex-direction: column; gap: 14px">
+<div style="height: 30rem; border-radius: 24px; overflow: hidden"><div class="ph-box" role="img" aria-label="Photo coming soon: Lakaz Filao · best wide shot" style="width: 100%; height: 100%; object-fit: cover; display: block"><span>Photo coming soon<b>Lakaz Filao · best wide shot</b></span></div></div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+<div><div style="font-size: 0.8rem; letter-spacing: 0.3em; color: #B4633A">LAKAZ</div><div style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1">Filao</div></div>
+<span style="font-weight: 500">Discover →</span>
+</div>
+<div style="color: #4A5A4F">Duplex · [X] bedrooms · up to [X] guests</div>
+</a>
+<a href="coco.html" style="text-decoration: none; display: flex; flex-direction: column; gap: 14px">
+<div style="height: 30rem; border-radius: 24px; overflow: hidden"><div class="ph-box" role="img" aria-label="Photo coming soon: Lakaz Coco · best wide shot" style="width: 100%; height: 100%; object-fit: cover; display: block"><span>Photo coming soon<b>Lakaz Coco · best wide shot</b></span></div></div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+<div><div style="font-size: 0.8rem; letter-spacing: 0.3em; color: #B4633A">LAKAZ</div><div style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1">Coco</div></div>
+<span style="font-weight: 500">Discover →</span>
+</div>
+<div style="color: #4A5A4F">Duplex · [X] bedrooms · up to [X] guests</div>
+</a>
+</section>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 5rem; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; background: #EAE1D2; border-radius: 24px; padding: 32px 36px">
+<div>
+<div style="font-size: 0.8rem; letter-spacing: 0.3em; color: #B4633A">COMING SOON</div>
+<div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem">Lakaz Banyan</div>
+</div>
+<a href="contact.html" style="text-decoration: none; border: 1px solid #1F3B2D; padding: 14px 24px; border-radius: 999px; font-weight: 500">Stay in touch</a>
+</div>
+</section>
+
+<footer style="background: #17301F; color: #D8CFBF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 44px 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center">
+<div><span style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 0.08em; color: #F4EDE1">Lakaz</span> <span style="font-size: 0.8rem; letter-spacing: 0.3em; margin-left: 10px">HOLIDAY HOMES MAURITIUS</span></div>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem">
+<a href="houses.html" style="color: #F4EDE1; text-decoration: none">Our Houses</a>
+<a href="story.html" style="color: #F4EDE1; text-decoration: none">Lakaz Story</a>
+<a href="contact.html" style="color: #F4EDE1; text-decoration: none">Contact Us</a>
+</nav>
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: #E0A47E">Bon vakans!</div>
+</div>
+</footer>
+
+</div>
+
+
+<script>
+function toggleMenu(){var b=document.body,open=!b.classList.contains('menu-open');b.classList.toggle('menu-open',open);
+var btn=document.querySelector('.burger');btn.setAttribute('aria-expanded',open);
+if(open){setTimeout(function(){var a=document.querySelector('.menu-panel a');a&&a.focus()},60)}else{btn.focus()}}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('menu-open'))toggleMenu()});
+</script>
+</body>
+</html>
