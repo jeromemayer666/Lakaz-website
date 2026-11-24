@@ -20,7 +20,10 @@ The holiday-rental website **Lakaz** — https://lakazmauritius.com
 - Photos are hotlinked from Unsplash. Sand-coloured **"Photo coming soon"** boxes are placeholders for Jérôme's own unit photos.
 
 ## Hosting (don't break these)
-- GitHub: private repository **lakaz-website** (branch `main` = the live site).
+- GitHub: **public** repository **Lakaz-website** (account jeromemayer666; branch `main` = the live site).
+- Working folder on Jérôme's PC: `C:\Users\jerom\Downloads\Lakaz-website` (with a dash). The old folder "Lakaz website" (with a space) is no longer used.
+- The repo must stay **public**: Netlify's free plan blocks builds from private repos ("Unrecognized Git contributor").
+- Netlify visibility: production is **Public**. Each production publish uses Netlify credits (~15), so group small changes into one branch.
 - Netlify project **prismatic-crumble-142e4f** is linked to that repo: every change on `main` goes live automatically. No build command, publish directory = root.
 - Domain lakazmauritius.com (+ www) is registered at Hostinger and already points to Netlify. **Never touch DNS.**
 - The guest guide **guide.lakazmauritius.com** is a separate Netlify project (**"lakaz-guide"**). **Never touch it.**
@@ -30,7 +33,7 @@ The holiday-rental website **Lakaz** — https://lakazmauritius.com
 1. **New branch for every change.** Never edit `main` directly. Name it after the change, e.g. `feature/new-photos`, `fix/contact-typo`.
 2. **Make the change** on that branch and save it (a "commit") with a short plain-English message.
 3. **Push the branch to GitHub and open a Pull Request** into `main`.
-4. **Check the Netlify preview.** Netlify automatically builds a "Deploy Preview" for the Pull Request — a private test link (looks like `deploy-preview-3--prismatic-crumble-142e4f.netlify.app`). The link appears on the Pull Request page on GitHub. Jérôme looks at it on his phone/laptop.
+4. **Check the Netlify preview.** Netlify automatically builds a "Deploy Preview" for the Pull Request — a private test link (looks like `deploy-preview-1--prismatic-crumble-142e4f.netlify.app`). The link appears on the Pull Request page on GitHub. Jérôme looks at it on his phone/laptop.
 5. **Merge to go live.** If happy, click "Merge pull request" on GitHub. Netlify publishes `main` to lakazmauritius.com within about a minute. If not happy, keep changing the same branch — the preview updates.
 6. Afterwards, switch back to `main` and pull the latest version before starting the next change.
 
